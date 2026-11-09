@@ -1,0 +1,17 @@
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\controller\AulaController.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\controller\FranjaHorariaController.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\controller\ProfesorController.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\controller\ReservaController.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\exception\ApiExceptionHandler.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\exception\RecursoNoEncontradoException.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\exception\ReservaNoValidaException.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\model\Aula.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\model\FranjaHoraria.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\model\Profesor.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\model\Reserva.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\repository\AulaRepository.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\repository\FranjaHorariaRepository.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\repository\ProfesorRepository.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\repository\ReservaRepository.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\ReservasAulasApplication.java
+C:\Users\denis\IdeaProjects\GestionReservas\ReservasAulas\src\main\java\es\iesjuanbosco\reservasaulas\service\ReservaService.java

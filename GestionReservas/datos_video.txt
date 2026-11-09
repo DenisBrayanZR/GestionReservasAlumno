@@ -1,0 +1,61 @@
+DATOS PARA EL VIDEO
+
+BLOQUE 4
+-------------------------------------------
+4.1 Aulas -> POST http://localhost:8080/aulas  (esperado 201)
+  {"nombre":"Aula 21","capacidad":30,"ordenadores":true}
+  {"nombre":"Aula 5","capacidad":15,"ordenadores":false}
+  {"nombre":"Laboratorio 3","capacidad":25,"ordenadores":true}
+
+4.2 Profesores -> POST http://localhost:8080/profesores  (esperado 201)
+  {"nombre":"Ana Lopez","email":"ana@centro.es"}
+  {"nombre":"Luis Perez","email":"luis@centro.es"}
+
+4.3 Franjas -> POST http://localhost:8080/franjas-horarias  (esperado 201)
+  {"horaInicio":"08:00:00","horaFin":"08:55:00"}
+  {"horaInicio":"08:55:00","horaFin":"09:50:00"}
+
+4.4 Consultas de aulas -> GET (sin Body, esperado 200)
+  http://localhost:8080/aulas                      -> las 3 aulas
+  http://localhost:8080/aulas?ordenadores=true     -> Aula 21 y Laboratorio 3
+  http://localhost:8080/aulas?ordenadores=false    -> Aula 5
+  http://localhost:8080/aulas?capacidad=20         -> Aula 21 y Laboratorio 3
+  http://localhost:8080/aulas?capacidad=25         -> solo Aula 21
+
+
+BLOQUE 5
+5.1 FRONTEND (http://localhost:5500)
+  a) Reserva valida:
+       Fecha: 20/11/2026 | Aula: Aula 21 | Profesor: Ana Lopez | Franja: 08:00 - 08:55
+       -> "Reserva creada correctamente"
+  b) Reserva repetida: los mismos datos
+       -> error en rojo de franja ocupada
+  c) Fecha pasada: cualquier fecha anterior a hoy
+       -> error de validacion en rojo
+
+5.2 POSTMAN -> POST http://localhost:8080/reservas
+  Valida (201):
+    {"fechaReserva":"2026-11-21","aula":{"id":1},"profesor":{"id":1},"franjaHoraria":{"id":1}}
+  Repetida (409):
+    {"fechaReserva":"2026-11-21","aula":{"id":1},"profesor":{"id":1},"franjaHoraria":{"id":1}}
+  Otro profesor, misma aula/fecha/franja (409):
+    {"fechaReserva":"2026-11-21","aula":{"id":1},"profesor":{"id":2},"franjaHoraria":{"id":1}}
+  Misma aula y fecha, otra franja (201):
+    {"fechaReserva":"2026-11-21","aula":{"id":1},"profesor":{"id":1},"franjaHoraria":{"id":2}}
+  Fecha pasada (400):
+    {"fechaReserva":"2020-01-01","aula":{"id":1},"profesor":{"id":1},"franjaHoraria":{"id":1}}
+  Aula inexistente (404):
+    {"fechaReserva":"2026-11-21","aula":{"id":999},"profesor":{"id":1},"franjaHoraria":{"id":1}}
+
+
+BLOQUE 6
+-----------------------------------
+  GET    http://localhost:8080/reservas        -> 200 lista
+  GET    http://localhost:8080/reservas/1      -> 200
+  PUT    http://localhost:8080/reservas/1      -> 200
+         {"fechaReserva":"2026-11-22","aula":{"id":1},"profesor":{"id":1},"franjaHoraria":{"id":1}}
+  DELETE http://localhost:8080/reservas/1      -> 204 (sin cuerpo)
+  GET    http://localhost:8080/reservas/1      -> 404
+  PUT    http://localhost:8080/aulas/3         -> 200
+         {"nombre":"Laboratorio 3","capacidad":28,"ordenadores":true}
+  GET    http://localhost:8080/aulas/999       -> 404

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas de aulas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Centro educativo</p>
+      <h1>Reservas de aulas</h1>
+      <p>Consulta la disponibilidad y registra una reserva.</p>
+    </header>
+    <section class="panel">
+      <h2>Nueva reserva</h2>
+      <form id="reserva-form">
+        <label>Fecha <input id="fechaReserva" type="date" required></label>
+        <label>Aula <select id="aula" required><option value="">Cargando...</option></select></label>
+        <label>Profesor <select id="profesor" required><option value="">Cargando...</option></select></label>
+        <label>Franja horaria <select id="franjaHoraria" required><option value="">Cargando...</option></select></label>
+        <button type="submit">Guardar reserva</button>
+      </form>
+      <p id="mensaje" role="status"></p>
+    </section>
+    <section class="panel">
+      <div class="section-title"><h2>Reservas registradas</h2><button id="recargar" class="secondary">Actualizar</button></div>
+      <div id="reservas" class="cards"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
